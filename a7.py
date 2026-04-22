@@ -157,10 +157,15 @@ class BayesClassifier:
             neg_prob += math.log((neg_count + 1) / (total_neg_words + V))
 
         # determine whether positive or negative was more probable (i.e. which one was larger)
+        
+        print(f"Positive Probabilities: {pos_prob}")
+        print(f"Negative Probabilities: {neg_prob}")
+
         if pos_prob > neg_prob:
             return "positive"
         else:
             return "negative"
+        
 
     def load_file(self, filepath: str) -> str:
         """Loads text of given file
@@ -297,3 +302,16 @@ if __name__ == "__main__":
     print("\nThe following should all be negative.")
     print(b.classify('rainy days are the worst'))
     print(b.classify('computer science is terrible'))
+    print("\nThe following is to test out the method with each groups responses")
+    print(b.classify("Unrelease this"))
+    print(b.classify("I would never watch this again, not my vibe"))
+    print(b.classify("\n This was a emotional, heartwarming watch."))
+    print(b.classify("We ALL are rewatching this movie. Banger"))
+    print(b.classify("Summer break is almost here.  I am super excited and I know that it's going to be the best"))
+    print(b.classify("I am nervous that I won't do well on the AP tests.  I have studied, but I don't think I'll do that well"))
+    print(b.classify("I HATED this movie"))
+    print(b.classify('evil movie'))
+    print(b.classify("Lasted very long and did me great!"))
+    print(b.classify("Super super super good ladder."))
+    print(b.classify("Worthless. Broke immediately don’t buy."))
+    print(b.classify("Scammer. All scammers, it doesn’t work as advertised."))
